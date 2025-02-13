@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Member - John "Riff" Smith</title>
+    <link rel="stylesheet" href="https://use.typekit.net/imw5jpp.css">
+  <link rel="stylesheet" href="Styles/styles.css" type="text/css">
+  <link href="Styles/invisible-hyperlinks.css" rel="stylesheet" type="text/css">
+  <link href="Styles/Animations.css" rel="stylesheet" type="text/css">
+    <style>
+       /* Global Styles */
+body {
+	font-family: Arial, sans-serif;
+  margin: 0 auto;
+  margin-bottom: 250px; 
+  padding: 0;
+  overflow-x: hidden;
+  background: url("../Assets/band website background.png") no-repeat center center fixed,
+}
+
+/* Header */
+header {
+  background-color: #151515;
+  color: #222;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 8px solid rgb(255, 0, 0);
+  font-family: 'Nosifer', cursive;
+  letter-spacing: 4px;
+  background-image: url("../Assets/banner.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Gradient Text */
+header h2 {
+  background: linear-gradient(to bottom, rgb(255, 0, 0), black); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 20px;
+  border-bottom: 1px solid gold;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.section img {
+  width: 50%;
+  animation: slideIn 1s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.5);
+}
+
+.footer {
+  background-color: black;
+  color: gold;
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+  border-top: 2px solid gold;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+  background-color: black;
+}
+
+.grid-item {
+  background-color: gold;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+}
+
+/* Headings & Paragraphs */
+h1 {
+  color: #FFF;
+
+}
+
+h2 {
+  text-align: center;
+  background: linear-gradient(to bottom, rgb(255, 0, 0), black); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  font-family: Arial, sans-serif;
+}
+
+h3, p {
+  text-align: left;
+}
+
+nav {
+  background-color: rgba(17, 17, 17, 0);
+  padding: 15px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  background-color: #848484;
+  border-radius: 5px;
+}
+
+.band-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  justify-content: center; /* Center the items */
+  gap: 20px; /* Space between each member */
+  padding: 20px;
+}
+
+/* Gradient Text */
+.band-members h2 {
+  background: linear-gradient(to bottom, rgb(255, 0, 0), black); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.band-member {
+  background-color: #222;
+  border: 2px solid #333;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: #fff;
+  width: 100%; /* Adjusted width for better responsiveness */
+  max-width: 300px; /* Limits the size of each member */
+}
+
+.center-text {
+  text-align: center;
+}
+
+/* Footer styles */
+footer {
+  background-color: #000;
+  color: #d4d4d4;
+  background-image: url("../Assets/banner.png");
+  padding: 2rem;
+  border-top: 3px solid #333;
+  width: 100%;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+  <h2 class="fonted-text"><em>Stage Fright - Face the Darkness</em></h2>
+</header>
+
+    <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+
+        <section class="band-member">
+            <h1>John "Riff" Smith</h1>
+            <img src="Assets/JohnPic.png" alt="John 'Riff' Smith"/>
+            <h1>Lead Guitarist</h1>
+            <p>John "Riff" Smith is the backbone of the band's electrifying sound. Known for his insane solos,  
+               blistering speed, and raw energy on stage, he brings a unique blend of technical skill and  
+               emotional depth to every performance.</p>
+        
+            <p>Born with a guitar in his hands (or so the legend goes), John started shredding at the age of  
+               seven. Influenced by rock legends like Eddie Van Halen, Slash, and Randy Rhoads, he developed a  
+               signature playing style that fuses classic rock with modern metal. His iconic red-and-black  
+               custom guitar is almost as famous as his onstage antics, which often include jumping off amps,  
+               playing behind his head, and setting his pick on fire (don’t ask how).</p>
+        
+            <p>Offstage, John is a perfectionist in the studio, spending countless hours fine-tuning every note.  
+               He’s also the band’s unofficial gearhead, always tweaking his pedalboard for the perfect tone.  
+               When he’s not playing, he’s collecting vintage guitars, designing custom effects pedals, and  
+               mentoring up-and-coming musicians.</p>
+        
+            <p>With a heart that beats in 4/4 time and fingers that move faster than a jet engine, John "Riff"  
+               Smith is more than just a guitarist—he’s a force of nature. Whether he's tearing through a  
+               face-melting solo or crafting intricate melodies, one thing’s for sure: when Riff picks up his  
+               guitar, the world listens.</p>
+        </section>
+        
+
+    <footer>
+        &copy; 2025 Stage Fright. All Rights Reserved.
+    </footer>
+  <script src="script.js"></script>
+</body>
+</html>

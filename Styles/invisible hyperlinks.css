@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+/* Make hyperlinks invisible */
+a {
+    color: #ffffff; /* Sets the color of the text to black */
+    text-decoration: none; /* Removes underline */
+}
+
+/* Optional: Add hover effect to indicate interactivity */
+a:hover {
+
+    cursor: pointer; /* Shows a pointer cursor to indicate it’s clickable */
+}
+

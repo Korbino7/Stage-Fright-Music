@@ -1,0 +1,446 @@
+@charset "utf-8";
+
+/* Global Styles */
+body {
+	font-family: Arial, sans-serif;
+  margin: 0 auto;
+  margin-bottom: 250px; 
+  padding: 0;
+  overflow-x: hidden;
+
+  background: url("../Assets/band website background.png") no-repeat center center fixed,
+              url("../Assets/this is so texture.jpg") repeat;
+  background-size: cover, auto;
+}
+
+/* Header */
+header {
+  background-color: #151515;
+  color: #222;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-bottom: 8px solid rgb(255, 0, 0);
+  font-family: 'Nosifer', cursive;
+  letter-spacing: 4px;
+  background-image: url("../Assets/banner.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: fadeIn 1s ease-out;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 20px;
+  border-bottom: 1px solid gold;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.section img {
+  width: 50%;
+  animation: slideIn 1s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.5);
+}
+
+.footer {
+  background-color: black;
+  color: gold;
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+  border-top: 2px solid gold;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.secondary-button {
+  background-color: black;
+  color: gold;
+  padding: 10px 20px;
+  border: 2px solid gold;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s;
+  border-radius: 5px;
+}
+
+.secondary-button:hover {
+  background-color: gold;
+  color: black;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+  background-color: black;
+}
+
+.grid-item {
+  background-color: gold;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* Gradient Text */
+header h2 {
+  background: linear-gradient(to bottom, rgb(255, 0, 0), black); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sections */
+section {
+    width: 80%;
+    max-width: 1500px;
+    padding: 20px;
+    background: #f4f4f4;
+    margin: 20px auto; /* Centers the section horizontally */
+	margin-bottom: 100px; /* Adjust this value for more space between sections */
+
+    border-radius: 15px;
+	transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    background-color: #000;
+    backdrop-filter: blur(5px);
+	border: 8px solid #333;
+	
+}
+ 
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 0.8s ease-in;
+}
+
+
+
+/* Headings & Paragraphs */
+h1 {
+  color: #FFF;
+
+}
+
+h2 {
+  text-align: center;
+  background: linear-gradient(to bottom, rgb(255, 0, 0), black); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2.5rem;
+  font-family: Arial, sans-serif;
+}
+
+h3, p {
+  text-align: left;
+}
+
+nav {
+  background-color: #11111100;
+  padding: 15px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  background-color: #848484;
+  border-radius: 5px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 12px;
+  }
+}
+
+/* About Section */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  color: #FFF;
+ 
+}
+
+/* Gradient Text */
+.about h2 {
+  background: linear-gradient(to bottom, rgb(255, 0, 0), black); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fonted-text{
+	font-family: "industry-inc-base", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.band-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  justify-content: center; /* Center the items */
+  gap: 20px; /* Space between each member */
+  padding: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto; /* Adds horizontal scrolling if needed */
+}
+
+/* Gradient Text */
+.band-members h2 {
+  background: linear-gradient(to bottom, rgb(255, 0, 0), black); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.band-member {
+  background-color: #222;
+  border: 2px solid #333;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: #fff;
+  width: 100%; /* Adjusted width for better responsiveness */
+  max-width: 300px; /* Limits the size of each member */
+}
+
+.band-member img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.band-member:hover {
+  background-color: #848484;
+}
+
+/* Tour Dates */
+.tour-dates {
+  list-style-type: none; /* Fixed this */
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.tour-dates li {
+  background: #222;
+  border: 2px solid #333;
+  margin: 10px 0;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tour-dates li:hover {
+  background-color: #848484;
+}
+
+.tour-dates a {
+  color: #fff;
+  text-decoration: none;
+  background-color: #222;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tour-dates a:hover {
+  background-color: #848484;
+}
+
+/* Gradient Text */
+.tour-dates h2 {
+  background: linear-gradient(to bottom, rgb(255, 0, 0), black); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Merch Grid */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+}
+
+.merch-item {
+  text-align: center;
+  border: 2px solid #333;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: #1b1b1b;
+  color: #d4d4d4;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+}
+
+.merch-item img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.merch-item:hover {
+  transform: scale(1.05) translateY(-5px);
+  background-color: #848484;
+}
+
+/* Gradient Text */
+.merch-grid h2 {
+  background: linear-gradient(to bottom, rgb(255, 0, 0), black); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dots */
+.dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #555;
+  border: 2px solid #222;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+.dot.inactive {
+  background-color: #555;
+}
+
+/* Ensure image/audio fits the container */
+#vinyl-content img,
+#vinyl-content audio {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #333;
+  color: #d4d4d4;
+  border: 1px solid #555;
+  transition: border-color 0.315px 30px;
+  background-color: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #848484;
+}
+
+/* Gradient Text */
+.contact-form h2 {
+  background: linear-gradient(to bottom, rgb(255, 0, 0), black); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Footer styles */
+footer {
+  background-color: #000;
+  background-image: url("../Assets/banner.jpg");
+  color: #d4d4d4;
+  text-align: center;
+  padding: 2rem;
+  border-top: 3px solid #333;
+  width: 100%;
+}

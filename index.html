@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage Fright - Face the Darkness</title>
+  <link rel="stylesheet" href="https://use.typekit.net/imw5jpp.css">
+  <link href="Styles/styles.css" rel="stylesheet" type="text/css">
+  <link href="Styles/invisible hyperlinks.css" rel="stylesheet" type="text/css">
+  <link href="Styles/Animations.css" rel="stylesheet" type="text/css">
+  <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+  <h2 class="fonted-text"><em>Stage Fright - Face the Darkness</em></h2>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#members">Band Members</a></li>
+    <li><a href="#tour-dates">Tour Dates</a></li>
+    <li><a href="#merch">Merch</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+<section class="about">
+  <h2 class="fonted-text">About Stage Fright</h2>
+  <p>Stage Fright is a high-energy death metal band known for delivering brutal, electrifying performances that fuse the raw intensity of death metal with modern, aggressive vibes. Formed in 2021, they’ve become a rising force in the death metal scene.</p>
+  <div class="about-details">
+    <h3>Our Journey</h3>
+    <p>From humble beginnings in a small garage to headlining major festivals, Stage Fright's journey is a testament to their dedication and passion for music. Each member brings a unique style and energy, creating a sound that is both powerful and unforgettable.</p>
+    <h3>Our Music</h3>
+    <p>With influences ranging from classic death metal to contemporary metalcore, Stage Fright's music is a relentless assault on the senses. Their debut album, "Face the Darkness," has been praised for its intricate guitar work, thunderous drumming, and guttural vocals.</p>
+    <h3>Join the Fright</h3>
+    <p>Become part of the Stage Fright family by following us on social media, attending our shows, and rocking out to our music. Together, we can face the darkness and emerge stronger than ever.</p>
+  </div>
+</section>
+
+<section id="members">
+  <h2 class="fonted-text">Band Members</h2>
+  <div class="band-members">
+    <div class="band-member">
+      <a href="john-smith.html">
+        <h4>John "Riff" Smith</h4>
+        <img src="Assets/JohnPic.png" alt="John 'Riff' Smith" width="197" height="200"/>
+        <p class="center-text">Lead Guitarist</p>
+      </a>
+    </div>
+    <div class="band-member">
+      <a href="mike-brown.html">
+      <h4>Mike "Thunder" Brown</h4>
+      <img src="Assets/MikePic.png" alt="Mike 'Thunder' Brown" width="197" height="200"/>    
+      <p class="center-text">Drummer</p>
+      </a>
+    </div>
+    <div class="band-member">
+      <a href="dave-johnson.html">
+      <h4>Dave "Growl" Johnson</h4>
+      <img src="Assets/DavePic.png" alt="Dave 'Growl' Johnson" width="197" height="200"/>
+      <p class="center-text">Vocalist</p>
+      </a>
+    </div>
+    <div class="band-member">
+      <a href="sam-taylor.html">
+      <h4>Sam "Beast" Taylor</h4>
+      <img src="Assets/SamPic.png" alt="Sam 'Beast' Taylor" width="197" height="200"/>
+      <p class="center-text">Bassist</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+  
+<section id="tour-dates">
+  <h2 class="fonted-text">Tour Dates</h2>
+  <ul class="tour-dates">
+    <li><span>Date: October 15, 2024</span> <a href="https://www.ticketmaster.com/">Get Tickets</a></li>
+    <li><span>Date: November 20, 2024</span> <a href="https://www.ticketmaster.com/">Get Tickets</a></li>
+    <li><span>Date: December 5, 2024</span> <a href="https://www.ticketmaster.com/">Get Tickets</a></li>
+    <li><span>Date: January 12, 2025</span> <a href="https://www.ticketmaster.com/">Get Tickets</a></li>
+  </ul>
+</section>
+  
+<section id="merch">
+  <h2 class="fonted-text">Merch</h2>
+
+  <div class="merch-grid">
+    <div class="merch-item" onclick="openModal('Sweatshirt', 50)">
+      <h4>Sweatshirt</h4>
+      <img src="Assets/sweatshirt.png" alt="Sweatshirt"/>
+      <p class="center-text">$50</p>
+    </div>
+
+    <div class="merch-item" onclick="openModal('T-Shirt', 35)">
+      <h4>T-Shirt</h4>
+      <img id="tshirt-img" src="Assets/tshirt-front.png" alt="T-Shirt"/>
+      <p class="center-text">$35</p>         
+      <div class="dots-container" id="tshirt-dots">
+        <span class="dot active" onclick='toggleImage("tshirt-img", "Assets/tshirt-front.png", "Assets/tshirt-back.png")'></span>
+        <span class="dot inactive" onclick='toggleImage("tshirt-img", "Assets/tshirt-back.png", "Assets/tshirt-front.png")'></span>
+      </div>
+    </div>
+
+    <div class="merch-item" onclick="openModal('Vinyl', 40)">
+      <h4>Vinyl</h4>
+      <div id="vinyl-content">
+        <img id="vinyl-img" src="Assets/vinyl.png" alt="Vinyl"/>
+      </div>
+      <p class="center-text">$40</p>
+      <div class="dots-container" id="vinyl-dots">
+        <span class="dot active" onclick='toggleVinylContent("vinyl-img", "Assets/vinyl.png", "Assets/SoundClip.mp3")'></span>
+        <span class="dot inactive" onclick='toggleVinylContent("vinyl-img", "Assets/SoundClip.mp3", "Assets/vinyl.png")'></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for purchasing -->
+<div id="purchaseModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Purchase Item</h2>
+    <p id="modal-item"></p>
+    <p>Price: $<span id="modal-price"></span></p>
+    <form id="purchase-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="address">Shipping Address:</label>
+      <textarea id="address" name="address" required></textarea>
+      
+      <button type="submit">Confirm Purchase</button>
+    </form>
+  </div>
+</div>
+
+<!-- Add CSS for modal -->
+<style>
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.6); /* Dark background with opacity */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#purchase-form label {
+  display: block;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#purchase-form input, 
+#purchase-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#purchase-form input:focus, 
+#purchase-form textarea:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+#purchase-form button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#purchase-form button:hover {
+  background-color: #848484;
+}
+
+#success-message {
+  display: none;
+  color: #000000;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+</style>
+
+<!-- Add JS to handle modal and toggling -->
+<script>
+  function toggleImage(imgId, img1, img2) {
+    const imgElement = document.getElementById(imgId);
+    if (imgElement.src.includes(img1)) {
+      imgElement.src = img2;
+    } else {
+      imgElement.src = img1;
+    }
+  }
+
+  function toggleVinylContent(vinylId, imagePath, audioPath) {
+    const vinylElement = document.getElementById(vinylId);
+    const dots = document.getElementById('vinyl-dots').children;
+
+    if (audioPath.includes('.mp3')) {
+      // Switch to audio content
+      vinylElement.innerHTML = `<audio controls><source src="${audioPath}" type="audio/mp3">Your browser does not support the audio element.</audio>`;
+      dots[0].classList.remove('active');
+      dots[0].classList.add('inactive');
+      dots[1].classList.remove('inactive');
+      dots[1].classList.add('active');
+    } else {
+      // Switch back to vinyl image
+      vinylElement.innerHTML = `<img src="${imagePath}" alt="Vinyl"/>`;
+      dots[1].classList.remove('active');
+      dots[1].classList.add('inactive');
+      dots[0].classList.remove('inactive');
+      dots[0].classList.add('active');
+    }
+  }
+
+  // Function to open the purchase modal and populate it with item details
+  function openModal(itemName, itemPrice) {
+    document.getElementById('modal-item').innerText = itemName;
+    document.getElementById('modal-price').innerText = itemPrice;
+
+    // Show the modal
+    document.getElementById('purchaseModal').style.display = 'block';
+  }
+
+  // Function to close the modal
+  function closeModal() {
+    document.getElementById('purchaseModal').style.display = 'none';
+  }
+
+  // Close the modal if the user clicks outside of it
+  window.onclick = function(event) {
+    if (event.target == document.getElementById('purchaseModal')) {
+      closeModal();
+    }
+  }
+</script>
+
+
+<section id="contact">
+  <h2 class="fonted-text">Contact Us</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Name" required/>
+    <input type="email" placeholder="Email" required/>
+    <textarea placeholder="Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p class="center-text">© 2025 Stage Fright Music</p>         
+</footer>
+
+</body>
+</html>
