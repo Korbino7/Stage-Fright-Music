@@ -44,28 +44,28 @@
     <div class="band-member">
       <a href="john-smith.html">
         <h4>John "Riff" Smith</h4>
-        <img src="Assets/JohnPic.png" alt="John 'Riff' Smith" width="197" height="200"/>
+        <img src="Assets/JohnPic.png" alt="John 'Riff' Smith" width="=197" height="300"/>
         <p class="center-text">Lead Guitarist</p>
       </a>
     </div>
     <div class="band-member">
       <a href="mike-brown.html">
       <h4>Mike "Thunder" Brown</h4>
-      <img src="Assets/MikePic.png" alt="Mike 'Thunder' Brown" width="197" height="200"/>    
+      <img src="Assets/MikePic.png" alt="Mike 'Thunder' Brown" width="=197" height="300"/>    
       <p class="center-text">Drummer</p>
       </a>
     </div>
     <div class="band-member">
       <a href="dave-johnson.html">
       <h4>Dave "Growl" Johnson</h4>
-      <img src="Assets/DavePic.png" alt="Dave 'Growl' Johnson" width="197" height="200"/>
+      <img src="Assets/DavePic.png" alt="Dave 'Growl' Johnson" width="=197" height="300"/>
       <p class="center-text">Vocalist</p>
       </a>
     </div>
     <div class="band-member">
       <a href="sam-taylor.html">
       <h4>Sam "Beast" Taylor</h4>
-      <img src="Assets/SamPic.png" alt="Sam 'Beast' Taylor" width="197" height="200"/>
+      <img src="Assets/SamPic.png" alt="Sam 'Beast' Taylor" width="=197" height="300"/>
       <p class="center-text">Bassist</p>
       </a>
     </div>
@@ -87,31 +87,32 @@
   <h2 class="fonted-text">Merch</h2>
 
   <div class="merch-grid">
-    <div class="merch-item" onclick="openModal('Sweatshirt', 50)">
+    <div class="merch-item" data-item="Sweatshirt" data-price="50">
       <h4>Sweatshirt</h4>
       <img src="Assets/sweatshirt.png" alt="Sweatshirt"/>
       <p class="center-text">$50</p>
     </div>
 
-    <div class="merch-item" onclick="openModal('T-Shirt', 35)">
+    <div class="merch-item" data-item="T-Shirt" data-price="35">
       <h4>T-Shirt</h4>
       <img id="tshirt-img" src="Assets/tshirt-front.png" alt="T-Shirt"/>
       <p class="center-text">$35</p>         
-      <div class="dots-container" id="tshirt-dots">
-        <span class="dot active" onclick='toggleImage("tshirt-img", "Assets/tshirt-front.png", "Assets/tshirt-back.png")'></span>
-        <span class="dot inactive" onclick='toggleImage("tshirt-img", "Assets/tshirt-back.png", "Assets/tshirt-front.png")'></span>
+      <div class="dots-container">
+        <span class="dot active" onclick='toggleImage("tshirt-img", "Assets/tshirt-front.png", "Assets/tshirt-back.png", event)'></span>
+        <span class="dot inactive" onclick='toggleImage("tshirt-img", "Assets/tshirt-back.png", "Assets/tshirt-front.png", event)'></span>
       </div>
     </div>
 
-    <div class="merch-item" onclick="openModal('Vinyl', 40)">
+    <div class="merch-item" data-item="Vinyl" data-price="40">
       <h4>Vinyl</h4>
       <div id="vinyl-content">
         <img id="vinyl-img" src="Assets/vinyl.png" alt="Vinyl"/>
+        <audio id="vinyl-audio" src="Assets/SoundClip.mp3" preload="auto"></audio>
       </div>
       <p class="center-text">$40</p>
-      <div class="dots-container" id="vinyl-dots">
-        <span class="dot active" onclick='toggleVinylContent("vinyl-img", "Assets/vinyl.png", "Assets/SoundClip.mp3")'></span>
-        <span class="dot inactive" onclick='toggleVinylContent("vinyl-img", "Assets/SoundClip.mp3", "Assets/vinyl.png")'></span>
+      <div class="dots-container">
+        <span class="dot active" onclick='toggleVinylContent(event)'></span>
+        <span class="dot inactive" onclick='toggleVinylContent(event)'></span>
       </div>
     </div>
   </div>
@@ -139,18 +140,63 @@
   </div>
 </div>
 
-<!-- Add CSS for modal -->
+<script>
+function toggleImage(imgId, frontSrc, backSrc, event) {
+  event.stopPropagation(); // Prevents modal from opening
+  let img = document.getElementById(imgId);
+  img.src = img.src === frontSrc ? backSrc : frontSrc;
+}
+
+function toggleVinylContent(event) {
+  event.stopPropagation(); // Prevents modal from opening
+  let img = document.getElementById("vinyl-img");
+  let audio = document.getElementById("vinyl-audio");
+  
+  if (img.style.display !== "none") {
+    img.style.display = "none";
+    audio.style.display = "block";
+    audio.play();
+  } else {
+    img.style.display = "block";
+    audio.style.display = "none";
+    audio.pause();
+    audio.currentTime = 0;
+  }
+}
+
+function openModal(itemName, itemPrice) {
+  document.getElementById("modal-item").innerText = itemName;
+  document.getElementById("modal-price").innerText = itemPrice;
+  document.getElementById("purchaseModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("purchaseModal").style.display = "none";
+}
+
+// Prevent modal from opening when clicking dots
+document.querySelectorAll(".merch-item").forEach(item => {
+  item.addEventListener("click", function(event) {
+    if (!event.target.closest(".dots-container")) { 
+      let itemName = this.getAttribute("data-item");
+      let itemPrice = this.getAttribute("data-price");
+      openModal(itemName, itemPrice);
+    }
+  });
+});
+</script>
+
 <style>
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.6); /* Dark background with opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
@@ -161,6 +207,7 @@
   width: 90%;
   max-width: 450px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 .close {
@@ -170,13 +217,11 @@
   position: absolute;
   top: 10px;
   right: 10px;
+  cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
+.close:hover {
   color: #000;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 #purchase-form label {
@@ -196,16 +241,10 @@
   font-size: 16px;
 }
 
-#purchase-form input:focus, 
-#purchase-form textarea:focus {
-  outline: none;
-  border-color: #000000;
-}
-
 #purchase-form button {
   margin-top: 20px;
   padding: 12px 20px;
-  background-color: #000000;
+  background-color: #000;
   color: white;
   border: none;
   border-radius: 4px;
@@ -218,15 +257,14 @@
   background-color: #848484;
 }
 
-#success-message {
+#vinyl-audio {
   display: none;
-  color: #000000;
-  font-weight: bold;
-  margin-top: 20px;
-  text-align: center;
+  width: 100%;
 }
-
 </style>
+
+
+
 
 <!-- Add JS to handle modal and toggling -->
 <script>
